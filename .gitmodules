@@ -1,0 +1,3 @@
+[submodule "packages/tutorials"]
+	path = packages/tutorials
+	url = git@github.com:meteor/tutorials.git
