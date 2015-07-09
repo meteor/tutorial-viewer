@@ -3,12 +3,13 @@
 </head>
 
 <body>
-  <h1>Welcome to Meteor!</h1>
+  <h1>Meteor tutorial viewer</h1>
 
-  {{> hello}}
+  {{> singlePageTutorial data=reactTutorial}}  
 </body>
 
-<template name="hello">
-  <button>Click Me</button>
-  <p>You've pressed the button {{counter}} times.</p>
+<template name="singlePageTutorial">
+  {{#each data}}
+    {{> Template.dynamic template=contentTemplate}}
+  {{/each}}
 </template>

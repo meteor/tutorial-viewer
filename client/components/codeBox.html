@@ -1,0 +1,11 @@
+<template name="codeBox">
+  <div class="panel panel-default code-box">
+    <div class="panel-heading code-box-heading">
+      {{this}}
+      <button class="select-all">Select All</button>
+    </div>
+    <div class="code-box-content">
+      {{> Template.contentBlock}}
+    </div>
+  </div>
+</template>
