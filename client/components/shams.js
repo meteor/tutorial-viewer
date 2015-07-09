@@ -1,3 +1,7 @@
 Template.registerHelper("pathFor", function () {
-  return "#";
+  return "#"
+});
+
+Template.registerHelper("dstache", function () {
+  return "{{";
 });
