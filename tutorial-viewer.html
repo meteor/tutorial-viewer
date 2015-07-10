@@ -5,7 +5,20 @@
 <body>
   <h1>Meteor tutorial viewer</h1>
 
-  {{> singlePageTutorial data=reactTutorial}}  
+  {{#basicTabs tabs=tabs}}
+    {{#tabContent slug="blaze"}}
+      {{> singlePageTutorial data=tutorials.BLAZE_TUT}}
+    {{/tabContent}}
+
+    {{#tabContent slug="angular"}}
+      {{> singlePageTutorial data=tutorials.ANGULAR_TUT}}
+    {{/tabContent}}
+
+    {{#tabContent slug="react"}}
+      {{> singlePageTutorial data=tutorials.REACT_TUT}}
+    {{/tabContent}}
+
+  {{/basicTabs}}
 </body>
 
 <template name="singlePageTutorial">
