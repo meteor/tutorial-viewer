@@ -5,24 +5,20 @@
 <body>
   <h1>Meteor tutorial viewer</h1>
 
-  {{#basicTabs tabs=tabs}}
-    {{#tabContent slug="blaze"}}
-      {{> singlePageTutorial data=tutorials.BLAZE_TUT}}
-    {{/tabContent}}
+  {{#each stepIndices}}
+    {{#basicTabs tabs=tabs}}
+      {{#tabContent slug="blaze"}}
+        {{> Template.dynamic template=getContentBlaze}}
+      {{/tabContent}}
 
-    {{#tabContent slug="angular"}}
-      {{> singlePageTutorial data=tutorials.ANGULAR_TUT}}
-    {{/tabContent}}
+      {{#tabContent slug="angular"}}
+        {{> Template.dynamic template=getContentAngular}}
+      {{/tabContent}}
 
-    {{#tabContent slug="react"}}
-      {{> singlePageTutorial data=tutorials.REACT_TUT}}
-    {{/tabContent}}
+      {{#tabContent slug="react"}}
+        {{> Template.dynamic template=getContentReact}}
+      {{/tabContent}}
 
-  {{/basicTabs}}
-</body>
-
-<template name="singlePageTutorial">
-  {{#each data}}
-    {{> Template.dynamic template=contentTemplate}}
+    {{/basicTabs}}
   {{/each}}
-</template>
+</body>

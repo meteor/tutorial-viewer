@@ -4,12 +4,8 @@ if (Meteor.isClient) {
   });
 
   Template.body.helpers({
-    tutorials: function () {
-      return {
-        BLAZE_TUT: BLAZE_TUT,
-        ANGULAR_TUT: ANGULAR_TUT,
-        REACT_TUT: REACT_TUT
-      };
+    stepIndices: function () {
+      return _.range(BLAZE_TUT.length);
     },
     tabs: function () {
       return [
@@ -17,6 +13,15 @@ if (Meteor.isClient) {
         { name: "Angular", slug: "angular" },
         { name: "React", slug: "react" }
       ]
+    },
+    getContentBlaze: function () {
+      return BLAZE_TUT[Template.parentData(1).valueOf()].contentTemplate;
+    },
+    getContentReact: function () {
+      return REACT_TUT[Template.parentData(1).valueOf()].contentTemplate;
+    },
+    getContentAngular: function () {
+      return ANGULAR_TUT[Template.parentData(1).valueOf()].contentTemplate;
     }
   });
 }
