@@ -6,19 +6,23 @@
   <h1>Meteor tutorial viewer</h1>
 
   {{#each stepIndices}}
-    {{#dynamicTabs tabs=tabs activeTab=activeTab}}
-      {{#tabContent slug="blaze"}}
-        {{> Template.dynamic template=getContentBlaze}}
-      {{/tabContent}}
-
-      {{#tabContent slug="angular"}}
-        {{> Template.dynamic template=getContentAngular}}
-      {{/tabContent}}
-
-      {{#tabContent slug="react"}}
-        {{> Template.dynamic template=getContentReact}}
-      {{/tabContent}}
-
-    {{/dynamicTabs}}
+    <button class="go-to-step">{{this}}</button>
   {{/each}}
+
+  <hr />
+
+  {{#dynamicTabs tabs=tabs activeTab=activeTab}}
+    {{#tabContent slug="blaze"}}
+      {{> Template.dynamic template=getContentBlaze}}
+    {{/tabContent}}
+
+    {{#tabContent slug="angular"}}
+      {{> Template.dynamic template=getContentAngular}}
+    {{/tabContent}}
+
+    {{#tabContent slug="react"}}
+      {{> Template.dynamic template=getContentReact}}
+    {{/tabContent}}
+
+  {{/dynamicTabs}}
 </body>
