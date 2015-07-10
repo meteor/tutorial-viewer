@@ -1,6 +1,19 @@
 if (Meteor.isClient) {
+  FlowRouter.route('/', {
+    triggersEnter: [function(context, redirect) {
+      redirect('/tutorial/blaze');
+    }]
+  });
+
+  FlowRouter.route('/tutorial/:slug', {
+    name: "tutorial"
+  });
+
   ReactiveTabs.createInterface({
-    template: 'basicTabs'
+    template: 'dynamicTabs',
+    onChange: function (slug) {
+      FlowRouter.go("tutorial", {slug: slug});
+    }
   });
 
   Template.body.helpers({
@@ -22,6 +35,9 @@ if (Meteor.isClient) {
     },
     getContentAngular: function () {
       return ANGULAR_TUT[Template.parentData(1).valueOf()].contentTemplate;
+    },
+    activeTab: function () {
+      return FlowRouter.getParam("slug");
     }
   });
 }
