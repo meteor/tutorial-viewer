@@ -3,3 +3,8 @@
 .tabs-list {
   margin: 0;
 }
+
+button.active {
+  font-weight: bold;
+  color: red;
+}

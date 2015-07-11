@@ -6,7 +6,9 @@
   <h1>Meteor tutorial viewer</h1>
 
   {{#each stepIndices}}
-    <button class="go-to-step">{{this}}</button>
+    <button class="go-to-step {{stepActiveClass}}">
+      {{stepNumber}}
+    </button>
   {{/each}}
 
   <hr />

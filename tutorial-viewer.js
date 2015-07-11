@@ -23,6 +23,12 @@ if (Meteor.isClient) {
     stepIndices: function () {
       return _.range(0, BLAZE_TUT.length);
     },
+    stepNumber: function () {
+      return this.valueOf() + 1;
+    },
+    stepActiveClass: function () {
+      return this.valueOf() == FlowRouter.getParam("step") && "active";
+    },
     tabs: function () {
       return [
         { name: "Blaze", slug: "blaze" },
