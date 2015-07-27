@@ -1,4 +1,8 @@
 if (Meteor.isClient) {
+  var blazeTut = TutorialRegistry.tutorials.blaze;
+  var angularTut = TutorialRegistry.tutorials.angular;
+  var reactTut = TutorialRegistry.tutorials.react;
+
   FlowRouter.route('/', {
     triggersEnter: [function(context, redirect) {
       redirect('/tutorial/0/blaze');
@@ -21,7 +25,7 @@ if (Meteor.isClient) {
 
   Template.body.helpers({
     stepIndices: function () {
-      return _.range(0, BLAZE_TUT.length);
+      return _.range(0, blazeTut.steps.length);
     },
     stepNumber: function () {
       return this.valueOf() + 1;
@@ -31,19 +35,19 @@ if (Meteor.isClient) {
     },
     tabs: function () {
       return [
-        { name: "Blaze", slug: "blaze" },
-        { name: "Angular", slug: "angular" },
-        { name: "React", slug: "react" }
+        { name: blazeTut.title, slug: "blaze" },
+        { name: angularTut.title, slug: "angular" },
+        { name: reactTut.title, slug: "react" }
       ]
     },
     getContentBlaze: function () {
-      return BLAZE_TUT[parseInt(FlowRouter.getParam("step"), 10)].contentTemplate;
+      return blazeTut.steps[parseInt(FlowRouter.getParam("step"), 10)].template;
     },
     getContentReact: function () {
-      return REACT_TUT[parseInt(FlowRouter.getParam("step"), 10)].contentTemplate;
+      return reactTut.steps[parseInt(FlowRouter.getParam("step"), 10)].template;
     },
     getContentAngular: function () {
-      return ANGULAR_TUT[parseInt(FlowRouter.getParam("step"), 10)].contentTemplate;
+      return angularTut.steps[parseInt(FlowRouter.getParam("step"), 10)].template;
     },
     activeTab: function () {
       return FlowRouter.getParam("slug");
@@ -82,8 +86,4 @@ if (Meteor.isClient) {
       selectText(template.find(".code-box-content code"));
     }
   });
-}
-
-if (Meteor.isServer) {
-
 }
