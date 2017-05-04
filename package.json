@@ -1,0 +1,25 @@
+{
+  "name": "tutorial-viewer",
+  "version": "1.0.0",
+  "description": "Read the Meteor tutorials in a minimalist app",
+  "main": "tutorial-viewer.js",
+  "dependencies": {
+    "babel-runtime": "^6.23.0",
+    "meteor-node-stubs": "^0.2.6"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/meteor/tutorial-viewer.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/meteor/tutorial-viewer/issues"
+  },
+  "homepage": "https://github.com/meteor/tutorial-viewer#readme"
+}
