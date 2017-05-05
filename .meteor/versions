@@ -37,9 +37,9 @@ less@2.7.9
 livedata@1.0.18
 logging@1.1.17
 markdown@1.0.12
-mdg:tutorial-diff-box@0.4.1
-mdg:tutorial-registry@0.4.1
-mdg:tutorial-step-diff-compiler@0.4.1
+mdg:tutorial-diff-box@0.4.2
+mdg:tutorial-registry@0.4.2
+mdg:tutorial-step-diff-compiler@0.4.2
 meteor@1.6.1
 meteor-platform@1.2.6
 meteorhacks:flow-router@1.19.0
